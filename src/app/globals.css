@@ -1,15 +1,25 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #F8F8F8;
+  --foreground: #333333;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  
+  --font-montserrat: var(--font-montserrat) /* Fonte sugerida pelo Egberto*/
+
+  --color-primary-blue: #1A3B7A;    /* Azul escuro principal */
+  --color-secondary-blue: #4DA6FF;  /* Azul claro para destaques. lembrar: Visualizar a possibilidade de usar o mesmo tom de azul do sistema deles*/
+  --color-dark-blue: #0D2244;    /* Azul cor do Header e Footer*/
+
+  --color-dark-gray: #333333;       /* Cinza para texto e fundos escuros */
+  --color-light-gray: #F8F8F8;      /* Cinza bem claro para fundos */
+  --color-accent-yellow: #FFD700;   /* Amarelo dourado para CTAs */
+
+  --background-image-hero-pattern: url('/hero-background.png');
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +32,6 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
+  font-family: "Montserrat", sans-serif;
 }
