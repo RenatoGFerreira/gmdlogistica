@@ -9,11 +9,10 @@ export default function Contacts() {
           </h2>
           <div className="bg-white p-6 rounded-lg shadow-lg">
             <p className="text-gray-600 italic mb-4">
-              "Com a GMD Logística, a organização no pátio reduziu mais de 22% do custo de perdas logísticas ."
+            &quot;Com a GMD Logística, a organização no pátio reduziu mais de 22% do custo de perdas logísticas.&ldquo;
             </p>
             <div className="flex items-center">
-              <div className="w-12 h-12 rounded-full bg-gray-300 mr-4"></div>{" "}
-              {/* Placeholder para imagem */}
+              <div className="w-12 h-12 rounded-full bg-gray-300 mr-4"></div>
               <div>
                 <p className="font-bold">Heitor Neves</p>
                 <p className="text-sm text-gray-500">CEO da InovaTech</p>

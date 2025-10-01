@@ -8,9 +8,9 @@ import caminhaoAzulCaixas from "../assets/images/caminhao_azul_caixas.png";
 import caminhaoBrancoArmazem from "../assets/images/caminhao_branco_armazem.png";
 import {
   GalleryItemProps,
-  YouTubeEmbedProps,
   FaqItemProps,
 } from "@/assets/interfaces";
+import Image from "next/image";
 
 const FaqItem: React.FC<FaqItemProps> = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,43 +36,7 @@ const FaqItem: React.FC<FaqItemProps> = ({ question, answer }) => {
 };
 
 // Lógica do YouTube
-const youtubeVideoId = "HiNhwZ-c_2E";
-const youtubeVideoTitle = "Vídeo Institucional - Nossa Empresa";
-const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
-  videoId,
-  title = "YouTube video player",
-  autoplay = false,
-  loop = false,
-  controls = true,
-  mute = false,
-}) => {
-  const embedUrl = new URL(`https://www.youtube.com/embed/${videoId}`);
-  embedUrl.searchParams.append("autoplay", autoplay ? "1" : "0");
-  embedUrl.searchParams.append("loop", loop ? "1" : "0");
-  embedUrl.searchParams.append("controls", controls ? "1" : "0");
-  embedUrl.searchParams.append("mute", mute ? "1" : "0");
-  if (loop) {
-    embedUrl.searchParams.append("playlist", videoId);
-  }
 
-  return (
-    <div
-      className="relative w-full overflow-hidden"
-      style={{ paddingTop: "56.25%" }} // Proporção 16:9
-    >
-      <iframe
-        className="absolute top-0 left-0 w-full h-full"
-        src={embedUrl.toString()}
-        title={title}
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerPolicy="strict-origin-when-cross-origin"
-        allowFullScreen
-        loading="lazy"
-      ></iframe>
-    </div>
-  );
-};
 
 const GalleryItem: React.FC<GalleryItemProps> = ({
   imageSrc,
@@ -85,10 +49,12 @@ const GalleryItem: React.FC<GalleryItemProps> = ({
   return (
     <div className="flex flex-col items-center p-2 text-center">
       <div className="relative w-30 h-30 md:w-35 md:h-35 lg:w-40 lg:h-40 rounded-full overflow-hidden border-2 border-transparent hover:border-blue-500 transition-colors duration-300">
-        <img
+        <Image
           src={src}
           alt={altText}
           className="absolute inset-0 w-full h-full object-cover"
+          width={500}
+          height={500}
         />
       </div>
       <p className="mt-4 text-white text-sm md:text-base font-semibold leading-tight max-w-[150px]">

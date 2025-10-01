@@ -1,12 +1,9 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
-import { Cpu, Cloud, ShieldCheck, CheckCircle2 } from "lucide-react";
-import Image from "next/image";
-import GMDAgenda from "@/assets/images/gmd_agenda_valida.png";
+import React from "react";
+import { CheckCircle2 } from "lucide-react";
+
 import {
-  GalleryItemProps,
   YouTubeEmbedProps,
-  FaqItemProps,
 } from "@/assets/interfaces";
 
 // Lógica do YouTube
