@@ -1,8 +1,9 @@
 "use client";
 import React from "react";
 import { CheckCircle2 } from "lucide-react";
-
 import { YouTubeEmbedProps } from "@/assets/interfaces";
+import { useRevealOnScroll } from "@/assets/useRevealOnScrool";
+
 
 // Lógica do YouTube
 const youtubeVideoId = "eGq9bqRQFeI?si=tByPPfvj0x1FFg_M";
@@ -44,9 +45,15 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
 };
 
 export default function Scheduling() {
+    const { ref, visible } = useRevealOnScroll();
+  
   return (
-    <section id="scheduling" className="py-20 bg-light-gray text-dark-gray">
-      <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12">
+    <section id="scheduling" ref={ref} className="py-20 bg-light-gray text-dark-gray">
+      <div className={`container mx-auto px-6 grid md:grid-cols-2 gap-12 ${
+            visible
+              ? "opacity-100 translate-y-0 animate-fade-in-up"
+              : "opacity-0 translate-y-8"
+          }`}>
         <div>
           <h2 className="text-3xl font-bold mb-6 text-primary-blue text-center md:text-start">
             1. Agende entregas conforme a capacidade da sua empresa

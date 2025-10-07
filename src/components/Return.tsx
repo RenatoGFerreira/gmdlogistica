@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { CheckCircle2 } from "lucide-react";
-
+import { useRevealOnScroll } from "@/assets/useRevealOnScrool";
 import { YouTubeEmbedProps } from "@/assets/interfaces";
 
 // Lógica do YouTube
@@ -44,8 +44,14 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
 };
 
 export default function Return() {
+    const { ref, visible } = useRevealOnScroll();
+  
   return (
-    <section id="return" className="py-20 bg-light-gray text-dark-gray">
+    <section id="return" ref={ref} className={`py-20 bg-light-gray text-dark-gray ${
+            visible
+              ? "opacity-100 translate-y-0 animate-fade-in-up"
+              : "opacity-0 translate-y-8"
+          }`}>
       <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12">
         <div>
                   <h2 className="text-3xl font-bold mb-6 text-primary-blue text-center md:text-start">

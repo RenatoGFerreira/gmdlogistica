@@ -1,4 +1,6 @@
 import React from "react";
+import { useRevealOnScroll } from "@/assets/useRevealOnScrool";
+
 
 type FooterProps = {
   phone?: string;
@@ -16,6 +18,8 @@ export default function Contacts({
 }: FooterProps) {
   const encoded = encodeURIComponent(message);
   const href = `https://wa.me/${phone}?text=${encoded}`;
+        const { ref, visible } = useRevealOnScroll();
+  
   return (
     <section id="contact" className="py-20 bg-light-gray">
       <div className="container mx-auto px-6 grid md:grid-cols-2 gap-16 ">
@@ -41,7 +45,7 @@ export default function Contacts({
 
         {/* Lado do Formulário */}
         <div>
-          <h2 className="text-3xl font-bold mb-8 text-primary-blue">
+          <h2 ref={ref} className="text-3xl font-bold mb-8 text-primary-blue">
             Entre em Contato
           </h2>
           {/* <form className="space-y-4">
@@ -122,7 +126,7 @@ export default function Contacts({
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={ariaLabel}
-                className="
+                className={`
         group
         relative
         inline-flex
@@ -143,7 +147,12 @@ export default function Contacts({
         focus:ring-2
         focus:ring-accent-yellow
         focus:ring-offset-2
-      "
+        ${
+            visible
+              ? "opacity-100 translate-y-0 animate-show-in"
+              : "opacity-0 translate-y-8"
+          }`}
+      
               >
                 {/* Container para o texto e a seta para aplicar o efeito de linha */}
                 <svg

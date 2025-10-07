@@ -1,11 +1,10 @@
 "use client";
 import React from "react";
 import { CheckCircle2 } from "lucide-react";
-
-
 import {
   YouTubeEmbedProps,
 } from "@/assets/interfaces";
+import { useRevealOnScroll } from "@/assets/useRevealOnScrool";
 
 // Lógica do YouTube
 const youtubeVideoId = "XAkmNLgIPnU?si=TQa-6O_u5KgVV0dL";
@@ -50,8 +49,14 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
 
 export default function Expedition() {
     const title = "4. Expedição só acontece com tudo certo"
+    const { ref, visible } = useRevealOnScroll();
+    
   return (
-    <section id="expedition" className="py-20 bg-dark-gray text-light-gray rounded-lg shadow-[0_25px_50px_-12px_rgba(0,0,0,0.3),0_-25px_50px_-12px_rgba(0,0,0,0.3)] backdrop-blur-sm">
+    <section id="expedition" ref={ref} className={`py-20 bg-dark-gray text-light-gray rounded-lg shadow-[0_25px_50px_-12px_rgba(0,0,0,0.3),0_-25px_50px_-12px_rgba(0,0,0,0.3)] backdrop-blur-sm ${
+            visible
+              ? "opacity-100 translate-y-0 animate-fade-in-up"
+              : "opacity-0 translate-y-8"
+          }`}>
       <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 ">
       <h2 className="text-3xl font-bold mb-2 text-secondary-blue md:hidden text-center">
             {title}

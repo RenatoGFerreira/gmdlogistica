@@ -6,13 +6,13 @@ const Hero: React.FC = () => {
   return (
     <section
       id="hero"
-      className="bg-primary-blue bg-cover bg-center text-light-gray min-h-screen flex items-center pt-20 shadow-2xl backdrop-blur-sm"
+      className="bg-primary-blue bg-cover bg-fixed bg-center text-light-gray min-h-screen flex items-center pt-20 shadow-2xl backdrop-blur-sm"
       style={{
         backgroundImage:
           "linear-gradient(rgba(26, 59, 122, 0.5), rgba(26, 59, 122, 0.9)), url('/background.png')",
       }}
     >
-      <div className="container mx-auto grid md:grid-cols-2 gap-8 items-center px-4">
+      <div className="container mx-auto grid md:grid-cols-2 gap-8 items-center px-4 animate-show-in">
         {/* Conteúdo de Texto */}
         <div className="text-center md:text-left animate-showIn z-1">
           <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-4 text-light-gray">
@@ -90,7 +90,7 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Imagem precisa de Animação ainda tem que fazer acho boa aquela animate-slide-in-right */}
-        <div className="flex justify-center h-max ">
+        <div className="flex justify-center h-max animate-slide-in-right ">
           <Image
             src="/people5.png"
             alt="Imagem representando uma solução digital inovadora"

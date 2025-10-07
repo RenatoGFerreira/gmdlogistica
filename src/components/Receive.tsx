@@ -1,8 +1,9 @@
 "use client";
 import React from "react";
 import { CheckCircle2 } from "lucide-react";
-
 import { YouTubeEmbedProps } from "@/assets/interfaces";
+import { useRevealOnScroll } from "@/assets/useRevealOnScrool";
+
 
 // Lógica do YouTube
 const youtubeVideoId = "vjgGt5QDFV8?si=S_iWvEyKUbTLpVPa";
@@ -45,13 +46,15 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
 
 export default function Receive() {
   const title = "2. Receba apenas o que foi realmente pedido";
+  const { ref, visible } = useRevealOnScroll();
+  
   return (
     <section
       id="receive"
       className="py-20 bg-dark-gray text-light-gray rounded-lg shadow-[0_25px_50px_-12px_rgba(0,0,0,0.3),0_-25px_50px_-12px_rgba(0,0,0,0.3)] backdrop-blur-sm"
     >
-      <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 ">
-        <h2 className="text-3xl font-bold mb-2 text-secondary-blue md:hidden text-center">
+      <div ref={ref} className="container mx-auto px-6 grid md:grid-cols-2 gap-12  ">
+        <h2 ref={ref} className="text-3xl font-bold mb-2 text-secondary-blue md:hidden text-center">
           {title}
         </h2>
         <div className="md:block ">
@@ -65,31 +68,51 @@ export default function Receive() {
           />
         </div>
         <div>
-          <h2 className="text-3xl font-bold mb-6 text-secondary-blue text-center md:text-start hidden md:flex">
+          <h2 ref={ref} className="text-3xl font-bold mb-6 text-secondary-blue text-center md:text-start hidden md:flex">
             {title}
           </h2>
-          <h3 className="text-xl text-left text-light-gray font-bold mb-2 ">
+          <h3 className={`text-xl text-left text-light-gray font-bold mb-2 ${
+            visible
+              ? "opacity-100 translate-y-0 animate-fade-in-up"
+              : "opacity-0 translate-y-8"
+          }`}>
             {" "}
             &#10003; Módulo GMD Recebe & Valida
           </h3>
-          <p className="text-left text-light-gray mb-6">
+          <p className={`text-left text-light-gray mb-6 ${
+            visible
+              ? "opacity-100 translate-y-0 animate-fade-in-up"
+              : "opacity-0 translate-y-8"
+          }`}>
           Antes de liberar a carga, o sistema compara automaticamente a nota fiscal com o pedido. Qualquer erro é identificado na hora, sem planilhas nem retrabalho.
           </p>
 
           <ul className="space-y-4">
-            <li className="flex items-end ">
+            <li className={`flex items-end ${
+            visible
+              ? "opacity-100 translate-y-0 animate-item-one"
+              : "opacity-0 translate-y-8"
+          }`}>
               <CheckCircle2 className="text-secondary-blue w-6 h-6 mr-3 mt-1 flex-shrink-0" />
               <span className="text-light-gray">
               Checagem automática de nota e pedido
               </span>
             </li>
-            <li className="flex items-end">
+            <li className={`flex items-end ${
+            visible
+              ? "opacity-100 translate-y-0 animate-item-two"
+              : "opacity-0 translate-y-8"
+          }`}>
               <CheckCircle2 className="text-secondary-blue w-6 h-6 mr-3 mt-1 flex-shrink-0" />
               <span className="text-light-gray">
               Sinaliza erros assim que o caminhão chega{" "}
               </span>
             </li>
-            <li className="flex items-end">
+            <li className={`flex items-end ${
+            visible
+              ? "opacity-100 translate-y-0 animate-item-three"
+              : "opacity-0 translate-y-8"
+          }`}>
               <CheckCircle2 className="text-secondary-blue w-6 h-6 mr-3 mt-1 flex-shrink-0" />
               <span className="text-light-gray">
               Registra tudo com data, hora e responsável{" "}

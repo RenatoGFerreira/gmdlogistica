@@ -7,6 +7,7 @@ import cubosSetas from "../assets/images/cubos_setas.png";
 import caminhaoAzulCaixas from "../assets/images/caminhao_azul_caixas.png";
 import caminhaoBrancoArmazem from "../assets/images/caminhao_branco_armazem.png";
 import Image from "next/image";
+import { useRevealOnScroll } from "@/assets/useRevealOnScrool";
 
 const FaqItem: React.FC<FaqItemProps> = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -42,7 +43,15 @@ const GalleryItem: React.FC<GalleryItemProps> = ({
 
   return (
     <a className="flex flex-col items-center p-2 text-center" href={href}>
-      <div className="relative w-30 h-30 md:w-35 md:h-35 lg:w-40 lg:h-40 rounded-full overflow-hidden border-2 border-transparent hover:border-blue-500 transition-colors duration-300">
+      <div className="relative 
+                      w-30 h-30 md:w-35 md:h-35 lg:w-40 lg:h-40 
+                      rounded-full 
+                      overflow-hidden 
+                      border-2 
+                      border-secondary-blue 
+                      transition-all duration-300 
+                      hover:shadow-[0_0_15px_5px_var(--color-secondary-blue)]
+">
         <Image
           src={src}
           alt={altText}
@@ -52,7 +61,7 @@ const GalleryItem: React.FC<GalleryItemProps> = ({
           
         />
       </div>
-      <p className="mt-4 text-white text-sm md:text-base font-semibold leading-tight max-w-[150px]">
+      <p className="mt-4 text-light-gray text-sm md:text-base font-semibold leading-tight max-w-[150px]">
         {label}
       </p>
     </a>
@@ -120,24 +129,39 @@ export default function Efforts() {
       href: "#management"
     },
   ];
+  const { ref, visible } = useRevealOnScroll();
+  
   return (
     <section
       id="efforts"
-      className="py-20 bg-dark-gray text-light-gray rounded-lg shadow-[0_25px_50px_-12px_rgba(0,0,0,0.3),0_-25px_50px_-12px_rgba(0,0,0,0.3)] backdrop-blur-sm"
+      ref={ref}
+      className="py-20 bg-dark-gray text-light-gray rounded-lg shadow-[0_25px_50px_-12px_rgba(0,0,0,0.3),0_-25px_50px_-12px_rgba(0,0,0,0.3)] backdrop-blur-sm "
     >
       <div className="container mx-auto mb-12 px-6 grid md:grid-cols-2 gap-12">
         <div className="md:col-span-2 ">
-          <h2 className="text-3xl font-bold mb-2 text-secondary-blue ">
+          <h2 ref={ref} className={`text-3xl font-bold mb-2 text-secondary-blue ${
+            visible
+              ? "opacity-100 translate-y-0 animate-fade-in-down"
+              : "invisible opacity-0 translate-y-8"
+          }`}>
             CHEGA DE CONTORNAR OS MESMOS PROBLEMAS TODOS OS DIAS.
           </h2>
-          <h3 className="text-xl text-left text-light-gray font-bold mb-12 ">
+          <h3 ref={ref} className={`text-xl text-left text-light-gray font-bold mb-12 ${
+            visible
+              ? "opacity-100 translate-y-0 animate-show-in"
+              : "opacity-0 translate-y-8"
+          }`}>
             &#10003; A GMD nasceu da vivência em chão de fábrica. O sistema
             resolve as dores que mais comprometem o seu resultado — de forma
             prática, integrada e rastreável.
           </h3>
 
           {/* FAQ */}
-          <div className="space-y-4 ">
+          <div className={`space-y-4 ${
+            visible
+              ? "opacity-100 translate-y-0 animate-show-in"
+              : "opacity-0 translate-y-8"
+          }`}>
             {displayedFaqs.map((item, index) => (
               <FaqItem
                 key={index}
@@ -169,7 +193,11 @@ export default function Efforts() {
         </div>
       </div>
 
-      <div className="mt-10 container mx-auto px-2 py-8 sm:px-4 lg:px-6">
+      <div ref={ref} className={`mt-10 container mx-auto px-2 py-8 sm:px-4 lg:px-6 ${
+            visible
+              ? "opacity-100 translate-y-0 animate-show-in"
+              : "opacity-0 translate-y-8"
+          }`}>
         <div className="flex flex-col items-center gap-8 text-center md:flex-row md:justify-between md:text-left">
           <h3 className="text-3xl font-bold text-secondary-blue">
             TRANSFORME DOR EM DADO E DADO EM DECISÃO

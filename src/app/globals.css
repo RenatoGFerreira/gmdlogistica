@@ -1,37 +1,107 @@
 @import "tailwindcss";
 
-:root {
-  --background: #F8F8F8;
-  --foreground: #333333;
+@layer base {
+  :root {
+    --background: #F8F8F8;
+    --foreground: #333333;
+    --font-montserrat: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --hero-bg-url: url('/hero-background.png');
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: #0a0a0a;
+      --foreground: #ededed;
+    }
+  }
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  
-  --font-montserrat: var(--font-montserrat) /* Fonte sugerida pelo Egberto*/
-  
-  --color-test-blue: #1A3B7A;    /* Azul escuro principal */
-  --color-primary-blue: #1A3B7A;    /* Azul escuro principal */
-  --color-secondary-blue: #4DA6FF;  /* Azul claro para destaques. lembrar: Visualizar a possibilidade de usar o mesmo tom de azul do sistema deles*/
-  --color-dark-blue: #0D2244;    /* Azul cor do Header e Footer*/
 
-  --color-dark-gray: #333333;       /* Cinza para texto e fundos escuros */
-  --color-light-gray: #F8F8F8;      /* Cinza bem claro para fundos */
-  --color-accent-yellow: #FFD700;   /* Amarelo dourado para CTAs */
+  --color-primary-blue: #1A3B7A;
+  --color-secondary-blue: #4DA6FF;
+  --color-dark-blue: #0D2244;
 
-  --background-image-hero-pattern: url('/hero-background.png');
+  --color-dark-gray: #333333;
+  --color-light-gray: #F8F8F8;
+  --color-accent-yellow: #FFD700;
+
+  --background-image-hero-pattern: var(--hero-bg-url);
+
+  --animate-slide-in-right: slide-in-right 1.1s ease-out forwards;
+  --animate-slide-in-left: slide-in-left 1.1s ease-out forwards;
+  --animate-slide-in-top: slide-in-top 1.1s ease-out forwards;
+  --animate-show-in: show-in 2.1s ease-out forwards;
+  --animate-fade-in-up: fade-in-up 1.5s ease-out forwards;
+  --animate-fade-in-down: fade-in-down 1.5s ease-out forwards;
+  --animate-item-one: item-one 2s ease-out forwards;
+  --animate-item-two: item-two 2.5s ease-out forwards;
+  --animate-item-three: item-three 3s ease-out forwards;
+
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@theme {
+  @keyframes slide-in-right {
+    0% { transform: translateX(10%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+  }
+  @keyframes slide-in-left {
+    0% { transform: translateX(-10%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+  }
+  @keyframes slide-in-top {
+    0% { transform: translateY(10%); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+  @keyframes slide-in-botton {
+    0% { transform: translateY(-10%); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+  @keyframes show-in {
+    0% {  opacity: 0; }
+    100% {  opacity: 1; }
+  }
+  @keyframes fade-in-up {
+    0% { 
+      opacity: 0; 
+      transform: translateY(30px); 
+    }
+    100% { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+  }
+  @keyframes fade-in-down {
+    0% { 
+      opacity: 0; 
+      transform: translateY(-30px); 
+    }
+    100% { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+  }
+  @keyframes item-one {
+    0% { transform: translateX(10%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+  }
+
+  @keyframes item-two {
+    0% { transform: translateX(10%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+  }
+  @keyframes item-three {
+    0% { transform: translateX(10%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
   }
 }
+
+html { scroll-behavior: smooth; }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-montserrat);
 }
