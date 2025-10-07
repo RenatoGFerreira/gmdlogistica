@@ -2,10 +2,7 @@
 import React from "react";
 import { CheckCircle2 } from "lucide-react";
 
-
-import {
-  YouTubeEmbedProps,
-} from "@/assets/interfaces";
+import { YouTubeEmbedProps } from "@/assets/interfaces";
 
 // Lógica do YouTube
 const youtubeVideoId = "vjgGt5QDFV8?si=S_iWvEyKUbTLpVPa";
@@ -46,16 +43,17 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
   );
 };
 
-
-
 export default function Receive() {
-    const title = "GMD RECEBE E VALIDA"
+  const title = "2. Receba apenas o que foi realmente pedido";
   return (
-    <section id="why-us" className="py-20 bg-dark-gray text-light-gray rounded-lg shadow-[0_25px_50px_-12px_rgba(0,0,0,0.3),0_-25px_50px_-12px_rgba(0,0,0,0.3)] backdrop-blur-sm">
+    <section
+      id="receive"
+      className="py-20 bg-dark-gray text-light-gray rounded-lg shadow-[0_25px_50px_-12px_rgba(0,0,0,0.3),0_-25px_50px_-12px_rgba(0,0,0,0.3)] backdrop-blur-sm"
+    >
       <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 ">
-      <h2 className="text-3xl font-bold mb-2 text-secondary-blue md:hidden">
-            {title}
-          </h2>
+        <h2 className="text-3xl font-bold mb-2 text-secondary-blue md:hidden text-center">
+          {title}
+        </h2>
         <div className="md:block ">
           <YouTubeEmbed
             videoId={youtubeVideoId}
@@ -66,27 +64,35 @@ export default function Receive() {
             controls={true}
           />
         </div>
-        <div className="mx-auto">
-          <h2 className="text-3xl font-bold mb-12 text-secondary-blue hidden md:flex">
+        <div>
+          <h2 className="text-3xl font-bold mb-6 text-secondary-blue text-center md:text-start hidden md:flex">
             {title}
           </h2>
+          <h3 className="text-xl text-left text-light-gray font-bold mb-2 ">
+            {" "}
+            &#10003; Módulo GMD Recebe & Valida
+          </h3>
+          <p className="text-left text-light-gray mb-6">
+          Antes de liberar a carga, o sistema compara automaticamente a nota fiscal com o pedido. Qualquer erro é identificado na hora, sem planilhas nem retrabalho.
+          </p>
+
           <ul className="space-y-4">
             <li className="flex items-end ">
               <CheckCircle2 className="text-secondary-blue w-6 h-6 mr-3 mt-1 flex-shrink-0" />
               <span className="text-light-gray">
-                Expertise em áreas distintas para oferecer a melhor solução.
+              Checagem automática de nota e pedido
               </span>
             </li>
             <li className="flex items-end">
               <CheckCircle2 className="text-secondary-blue w-6 h-6 mr-3 mt-1 flex-shrink-0" />
               <span className="text-light-gray">
-                Construção de parcerias de longo prazo baseadas em confiança.
+              Sinaliza erros assim que o caminhão chega{" "}
               </span>
             </li>
             <li className="flex items-end">
               <CheckCircle2 className="text-secondary-blue w-6 h-6 mr-3 mt-1 flex-shrink-0" />
               <span className="text-light-gray">
-                Flexibilidade e agilidade para atender às suas necessidades.
+              Registra tudo com data, hora e responsável{" "}
               </span>
             </li>
           </ul>

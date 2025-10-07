@@ -1,10 +1,8 @@
 import { Cpu, Cloud, ShieldCheck, CheckCircle2 } from 'lucide-react';
 
-
-
 export default function Whoweare(){
 return(
-    <section id="features" className="py-20 bg-white">
+    <section id="features" className="py-20 bg-light-gray">
           <div className="container mx-auto px-6 text-center">
             <h2 className="text-3xl font-bold mb-12 text-primary-blue">UM SISTEMA COMPLETO</h2>
             

@@ -54,8 +54,8 @@ const Header: React.FC = () => {
 
         {/* Menu Desktop */}
         <nav className="hidden md:flex space-x-8 text-light-gray">
-          <NavLink href="#features">Funcionalidades</NavLink>
-          <NavLink href="#why-us">Sobre Nós</NavLink>
+          <NavLink href="#functionalities">Funcionalidades</NavLink>
+          <NavLink href="#efforts">Sistema GMD</NavLink>
           <NavLink href="#contact">Contato</NavLink>
         </nav>
 

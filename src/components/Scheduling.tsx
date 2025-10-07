@@ -2,9 +2,7 @@
 import React from "react";
 import { CheckCircle2 } from "lucide-react";
 
-import {
-  YouTubeEmbedProps,
-} from "@/assets/interfaces";
+import { YouTubeEmbedProps } from "@/assets/interfaces";
 
 // Lógica do YouTube
 const youtubeVideoId = "eGq9bqRQFeI?si=tByPPfvj0x1FFg_M";
@@ -47,44 +45,42 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
 
 export default function Scheduling() {
   return (
-    <section id="why-us" className="py-20 bg-light-gray text-dark-gray">
+    <section id="scheduling" className="py-20 bg-light-gray text-dark-gray">
       <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12">
         <div>
-          <h2 className="text-3xl font-bold mb-12 text-primary-blue">
-            GMD AGENDA E VALIDA
+          <h2 className="text-3xl font-bold mb-6 text-primary-blue text-center md:text-start">
+            1. Agende entregas conforme a capacidade da sua empresa
           </h2>
+          <h3 className="text-xl text-left text-dark-gray font-bold mb-2 ">
+            {" "}
+            &#10003; Módulo GMD Agenda & Valida
+          </h3>
+          <p className="text-left text-dark-gray mb-6">
+            Esse módulo organiza os horários de entrega com base na sua real
+            capacidade de recebimento. Evita acúmulo de caminhões e excesso de
+            materiais.
+          </p>
 
           <ul className="space-y-4">
             <li className="flex items-end ">
               <CheckCircle2 className="text-primary-blue w-6 h-6 mr-3 mt-1 flex-shrink-0" />
               <span className="text-dark-gray">
-                Agende entregas conforme a capacidade das docas
+              Evita fila de caminhões na portaria
               </span>
             </li>
             <li className="flex items-end">
               <CheckCircle2 className="text-primary-blue w-6 h-6 mr-3 mt-1 flex-shrink-0" />
               <span className="text-dark-gray">
-                Controle automático com base na necessidade real{" "}
+              Bloqueia entregas acima do necessário{" "}
               </span>
             </li>
             <li className="flex items-end">
               <CheckCircle2 className="text-primary-blue w-6 h-6 mr-3 mt-1 flex-shrink-0" />
               <span className="text-dark-gray">
-                Evite filas e desperdícios com cadência precisa{" "}
+              Organiza o recebimento por prioridade{" "}
               </span>
             </li>
-            <li className="flex items-end">
-              <CheckCircle2 className="text-primary-blue w-6 h-6 mr-3 mt-1 flex-shrink-0" />
-              <span className="text-dark-gray">
-                Bloqueie excessos: só entra o que foi solicitado{" "}
-              </span>
-            </li>
-            <li className="flex items-end">
-              <CheckCircle2 className="text-primary-blue w-6 h-6 mr-3 mt-1 flex-shrink-0" />
-              <span className="text-dark-gray">
-                Estoque enxuto e sob controle do seu time{" "}
-              </span>
-            </li>
+            
           </ul>
         </div>
         <div className="md:block ">

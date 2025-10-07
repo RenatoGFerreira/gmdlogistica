@@ -15,30 +15,88 @@ const Hero: React.FC = () => {
       <div className="container mx-auto grid md:grid-cols-2 gap-8 items-center px-4">
         {/* Conteúdo de Texto */}
         <div className="text-center md:text-left animate-showIn z-1">
-          <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-4 text-light-gray">
+          <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-4 text-light-gray">
             A logística da sua empresa de forma{" "}
-            <span className="text-accent-yellow">Tecnológica</span>.
+            <span className="text-accent-yellow">Tecnológica</span>
           </h1>
           <p className="text-xl text-light-gray mb-8">
-            Sistema completo com 6 soluções voltados para a logística, gestão e
-            automatização da sua empresa.
+            O sistema GMD organiza e conecta cada etapa da logística – do
+            agendamento a expedição – com prioridade para o que importa,
+            bloqueios em caso de erro e indicadores em tempo real.
           </p>
+
           <a
             href="#contact"
-            className="bg-accent-yellow text-dark-gray font-bold py-3 px-8 rounded-2xl text-lg  transition-transform duration-300 inline-block hover:scale-105"
+            className="
+        group
+        relative
+        inline-flex
+        items-center
+        justify-center
+        overflow-hidden
+        rounded-2xl
+        bg-accent-yellow
+        px-8
+        py-3
+        text-lg
+        font-bold
+        text-dark-gray
+        transition-transform
+        duration-300
+        hover:scale-105
+        focus:outline-none
+        focus:ring-2
+        focus:ring-accent-yellow
+        focus:ring-offset-2
+      "
           >
-            Comece Agora
+            {/* Container para o texto e a seta para aplicar o efeito de linha */}
+            <span
+              className="
+          relative
+          flex
+          items-center
+          gap-2
+          whitespace-nowrap
+          after:absolute
+          after:bottom-[-1px] {/* Ajuste a posição da linha conforme necessário */}
+          after:left-0
+          after:h-[2px]
+          after:w-0
+          after:bg-dark-gray/30 {/* Cor da linha */}
+          after:transition-all
+          after:duration-300
+          after:ease-out
+          group-hover:after:w-full
+        "
+            >
+              Agendar demonstração
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth="3"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                />
+              </svg>
+            </span>
           </a>
         </div>
 
         {/* Imagem precisa de Animação ainda tem que fazer acho boa aquela animate-slide-in-right */}
         <div className="flex justify-center h-max ">
           <Image
-            src="/people4.png"
+            src="/people5.png"
             alt="Imagem representando uma solução digital inovadora"
-            className="w-200 h-max object-contain"
-            width={500} 
-            height={300}
+            className="w-200 h-max object-contain "
+            width={600}
+            height={600}
           />
         </div>
       </div>

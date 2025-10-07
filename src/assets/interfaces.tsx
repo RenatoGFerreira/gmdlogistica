@@ -9,6 +9,7 @@ export interface GalleryItemProps {
   imageSrc: string | StaticImageData;
   altText: string;
   label: string;
+  href: string;
 }
 
 export interface YouTubeEmbedProps {
