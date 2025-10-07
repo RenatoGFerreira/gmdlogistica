@@ -139,7 +139,7 @@ export default function Efforts() {
     >
       <div className="container mx-auto mb-12 px-6 grid md:grid-cols-2 gap-12">
         <div className="md:col-span-2 ">
-          <h2 ref={ref} className={`text-3xl font-bold mb-2 text-secondary-blue ${
+          <h2 ref={ref} className={`text-3xl font-bold mb-2 text-secondary-blue text-center md:text-start ${
             visible
               ? "opacity-100 translate-y-0 animate-fade-in-down"
               : "invisible opacity-0 translate-y-8"
@@ -272,7 +272,7 @@ export default function Efforts() {
 
 
       <div className="mt-20 container mx-auto px-2 sm:px-4 lg:px-6">
-      <h2 className="text-3xl font-bold mt-12 mb-6 text-secondary-blue">
+      <h2 className="text-3xl font-bold mt-12 mb-6 text-secondary-blue text-center md:text-start">
             SISTEMA GMD - OVERVIEW
           </h2>
           <h3 className="text-xl text-left text-light-gray font-bold mb-12 ">

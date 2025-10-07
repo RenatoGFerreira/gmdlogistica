@@ -25,7 +25,7 @@ export default function Contacts({
       <div className="container mx-auto px-6 grid md:grid-cols-2 gap-16 ">
         {/* Lado do Depoimento */}
         <div>
-          <h2 className="text-3xl font-bold mb-8 text-primary-blue">
+          <h2 className="text-3xl font-bold mb-8 text-primary-blue text-center md:text-start">
             O que nossos clientes dizem
           </h2>
           <div className="bg-white p-6 rounded-lg shadow-lg">
@@ -45,7 +45,7 @@ export default function Contacts({
 
         {/* Lado do Formulário */}
         <div>
-          <h2 ref={ref} className="text-3xl font-bold mb-8 text-primary-blue">
+          <h2 ref={ref} className="text-3xl font-bold mb-8 text-primary-blue text-center md:text-start">
             Entre em Contato
           </h2>
           {/* <form className="space-y-4">

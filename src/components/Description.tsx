@@ -99,7 +99,7 @@ export default function Description() {
           }`}>
 
       <div className="container mx-auto px-6 text-centeR">
-        <h2 className="text-3xl font-bold mb-2 text-primary-blue">MODULAR, INTEGRADO, DECISIVO</h2>
+        <h2 className="text-3xl font-bold mb-2 text-primary-blue text-center md:text-start">MODULAR, INTEGRADO, DECISIVO</h2>
         <h3 className="text-xl text-left text-dark-gray font-bold mb-12 "> &#10003; Um sistema logístico que te dá o controle.</h3>
         <p className="text-left text-dark-gray">
         A GMD oferece uma solução completa, dividida em módulos que resolvem as dores reais do seu negócio. Use tudo junto ou implemente por partes — no seu ritmo.
